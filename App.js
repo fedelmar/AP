@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './Screens/home';
-import Esponjas from './Screens/esponjas';
+import Esponjas from './Screens/esponjas/esponjas';
 
 const Stack = createStackNavigator();
 
