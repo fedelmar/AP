@@ -25,7 +25,7 @@ return (
         defaultValue=""
         style={styles.textImput}
     />
-    {errors.fristName && <Text>Campo requerido</Text>}
+    {errors.producto && Alert.alert("Complete el Producto")}
 
     <Text style={styles.label}>Lote</Text>
     <Controller
@@ -37,7 +37,7 @@ return (
       defaultValue=""
       style={styles.numberImput}
     />
-    {errors.fristName && <Text>Campo requerido</Text>}
+    {errors.lote && Alert.alert("Complete el Lote")}
 
     <Text style={styles.label}>Lote de Espoja</Text>
     <Controller
@@ -49,7 +49,7 @@ return (
         defaultValue=""
         style={styles.numberImput}
     />
-    {errors.fristName && <Text>Campo requerido</Text>}
+    {errors.lesponja && Alert.alert("Complete el Lote de Esponja")}
 
     <Text style={styles.label}>Lote de Bolsa</Text>
     <Controller
@@ -61,7 +61,7 @@ return (
         defaultValue=""
         style={styles.numberImput}
     />
-    {errors.fristName && <Text>Campo requerido</Text>}
+    {errors.lbolsa && Alert.alert("Complete el Lote de Bolsa")}
 
     <Text style={styles.label}>Operario</Text>
     <Controller
@@ -73,7 +73,8 @@ return (
         defaultValue=""
         style={styles.textImput}
     />
-    {errors.fristName && <Text>Campo requerido</Text>}
+    {errors.operario && Alert.alert("¿Quíen sos?")}
+
     <Button title="Submit" onPress={handleSubmit(onSubmit)} />
   </View>  
 );
