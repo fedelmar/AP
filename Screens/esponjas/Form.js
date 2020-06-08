@@ -2,12 +2,15 @@ import React from 'react';
 import { useForm, Controller } from "react-hook-form";
 import { TextInput, StyleSheet, Text, View, Alert, Button } from 'react-native';
 
-export default function Esponjas() {
+export default function Form({ navigation }) {
   const { control, handleSubmit, errors } = useForm();
-  const onSubmit = data => Alert.alert(
+  const onSubmit = data => {
+    Alert.alert(
     "Datos",
     JSON.stringify(data),
-  );
+    );
+    navigation.navigate("Home");
+  }
 
 return (
   <View style={styles.container}>
@@ -60,6 +63,17 @@ return (
     />
     {errors.fristName && <Text>Campo requerido</Text>}
 
+    <Text style={styles.label}>Operario</Text>
+    <Controller
+        as={TextInput}
+        control={control}
+        name="operario"
+        onChange={args => args[0].nativeEvent.text}
+        rules={{ required: true }}
+        defaultValue=""
+        style={styles.textImput}
+    />
+    {errors.fristName && <Text>Campo requerido</Text>}
     <Button title="Submit" onPress={handleSubmit(onSubmit)} />
   </View>  
 );
