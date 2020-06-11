@@ -15,67 +15,33 @@ export default function Form({ navigation }) {
 return (
   <View style={styles.container}>
 
-    <Text style={styles.label}>Producto</Text>
+    <Text style={styles.label}>Descarte</Text>
     <Controller
         as={TextInput}
         control={control}
         name="producto"
         onChange={args => args[0].nativeEvent.text}
         rules={{ required: true }}
-        defaultValue=""
+        defaultValue="..."
         style={styles.textImput}
     />
-    {errors.producto && Alert.alert("Complete el Producto")}
+    {errors.producto && Alert.alert("Complete el Descarte")}
 
-    <Text style={styles.label}>Lote</Text>
-    <Controller
-      as={TextInput}
-      control={control}
-      name="lote"
-      onChange={args => args[0].nativeEvent.text}
-      rules={{ required: true }}
-      defaultValue=""
-      style={styles.numberImput}
-    />
-    {errors.lote && Alert.alert("Complete el Lote")}
-
-    <Text style={styles.label}>Lote de Espoja</Text>
-    <Controller
-        as={TextInput}
-        control={control}
-        name="lesponja"
-        onChange={args => args[0].nativeEvent.text}
-        rules={{ required: true }}
-        defaultValue=""
-        style={styles.numberImput}
-    />
-    {errors.lesponja && Alert.alert("Complete el Lote de Esponja")}
-
-    <Text style={styles.label}>Lote de Bolsa</Text>
+    <Text style={styles.label}>Cantidad Producida</Text>
     <Controller
         as={TextInput}
         control={control}
         name="lbolsa"
         onChange={args => args[0].nativeEvent.text}
         rules={{ required: true }}
-        defaultValue=""
+        defaultValue="..."
         style={styles.numberImput}
     />
-    {errors.lbolsa && Alert.alert("Complete el Lote de Bolsa")}
+    {errors.lbolsa && Alert.alert("Complete la Cantidad Producida")}
 
-    <Text style={styles.label}>Operario</Text>
-    <Controller
-        as={TextInput}
-        control={control}
-        name="operario"
-        onChange={args => args[0].nativeEvent.text}
-        rules={{ required: true }}
-        defaultValue=""
-        style={styles.textImput}
-    />
-    {errors.operario && Alert.alert("¿Quíen sos?")}
 
-    <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+
+    <Button title="Cerrar Secion" onPress={handleSubmit(onSubmit)} />
   </View>  
 );
 
