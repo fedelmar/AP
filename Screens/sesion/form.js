@@ -3,6 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import { TextInput, StyleSheet, Text, View, Alert, Button } from 'react-native';
 
 export default function Form({ navigation }) {
+  
   const { control, handleSubmit, errors } = useForm();
   const onSubmit = data => {
     Alert.alert(
@@ -14,30 +15,30 @@ export default function Form({ navigation }) {
 
 return (
   <View style={styles.container}>
-
+    
     <Text style={styles.label}>Descarte</Text>
     <Controller
         as={TextInput}
         control={control}
-        name="producto"
+        name="descarte"
         onChange={args => args[0].nativeEvent.text}
         rules={{ required: true }}
         defaultValue="..."
         style={styles.textImput}
     />
-    {errors.producto && Alert.alert("Complete el Descarte")}
+    {errors.descarte && Alert.alert("Complete el Descarte")}
 
     <Text style={styles.label}>Cantidad Producida</Text>
     <Controller
         as={TextInput}
         control={control}
-        name="lbolsa"
+        name="produccion"
         onChange={args => args[0].nativeEvent.text}
         rules={{ required: true }}
         defaultValue="..."
         style={styles.numberImput}
     />
-    {errors.lbolsa && Alert.alert("Complete la Cantidad Producida")}
+    {errors.produccion && Alert.alert("Complete la Cantidad Producida")}
 
 
 
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
-      justifyContent: 'center',
+
     },
     numberImput: {
         height: 40,

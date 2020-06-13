@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm, Controller } from "react-hook-form";
 import { TextInput, StyleSheet, Text, View, Alert, Button } from 'react-native';
+import Date from './date';
 
 export default function Form({ navigation }) {
   const { control, handleSubmit, errors } = useForm();
@@ -9,12 +10,18 @@ export default function Form({ navigation }) {
     "Datos",
     JSON.stringify(data),
     );
-    navigation.navigate("Sesion");
+    navigation.navigate('Sesion',{
+      lote: data.lote, 
+      producto: data.producto,
+      operario: data.operario,
+      lbolsa: data.lbolsa,
+      lesponja: data.lesponja,
+    });
   }
 
 return (
   <View style={styles.container}>
-
+    <Date />
     <Text style={styles.label}>Producto</Text>
     <Controller
         as={TextInput}

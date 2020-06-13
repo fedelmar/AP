@@ -14,7 +14,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Ap App' }}/>
         <Stack.Screen name="Esponjas" component={Esponjas} options={{ title: 'Planilla Esponjas'}} />
-        <Stack.Screen name="Sesion" component={Sesion} options={{ title: 'Secion Iniciada' }}/>
+        <Stack.Screen name="Sesion" component={Sesion} options={{ title: 'Sesíon Iniciada' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
