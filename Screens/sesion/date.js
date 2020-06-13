@@ -25,6 +25,7 @@ export default class App extends Component {
   render() {
     return (
         <Text>
+          Hora de inicio: 
           {this.state.date}
         </Text>
     );
