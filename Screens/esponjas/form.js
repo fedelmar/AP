@@ -6,10 +6,6 @@ import Date from './date';
 export default function Form({ navigation }) {
   const { control, handleSubmit, errors } = useForm();
   const onSubmit = data => {
-    Alert.alert(
-    "Datos",
-    JSON.stringify(data),
-    );
     navigation.navigate('Sesion',{
       lote: data.lote, 
       producto: data.producto,
@@ -29,7 +25,7 @@ return (
         name="producto"
         onChange={args => args[0].nativeEvent.text}
         rules={{ required: true }}
-        defaultValue="..."
+        defaultValue=""
         style={styles.textImput}
     />
     {errors.producto && Alert.alert("Complete el Producto")}
@@ -41,7 +37,7 @@ return (
       name="lote"
       onChange={args => args[0].nativeEvent.text}
       rules={{ required: true }}
-      defaultValue="..."
+      defaultValue=""
       style={styles.numberImput}
     />
     {errors.lote && Alert.alert("Complete el Lote")}
@@ -53,7 +49,7 @@ return (
         name="lesponja"
         onChange={args => args[0].nativeEvent.text}
         rules={{ required: true }}
-        defaultValue="..."
+        defaultValue=""
         style={styles.numberImput}
     />
     {errors.lesponja && Alert.alert("Complete el Lote de Esponja")}
@@ -65,7 +61,7 @@ return (
         name="lbolsa"
         onChange={args => args[0].nativeEvent.text}
         rules={{ required: true }}
-        defaultValue="..."
+        defaultValue=""
         style={styles.numberImput}
     />
     {errors.lbolsa && Alert.alert("Complete el Lote de Bolsa")}
@@ -77,7 +73,7 @@ return (
         name="operario"
         onChange={args => args[0].nativeEvent.text}
         rules={{ required: true }}
-        defaultValue="..."
+        defaultValue=""
         style={styles.textImput}
     />
     {errors.operario && Alert.alert("¿Quíen sos?")}
@@ -96,7 +92,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
-      alignItems: 'center',
+      marginLeft: 0,
       justifyContent: 'center',
     },
     numberImput: {

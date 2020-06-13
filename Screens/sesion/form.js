@@ -2,19 +2,35 @@ import React from 'react';
 import { useForm, Controller } from "react-hook-form";
 import { TextInput, StyleSheet, Text, View, Alert, Button } from 'react-native';
 
-export default function Form({ navigation }) {
-  
+export default function Form({ navigation, datos }) {
+ 
   const { control, handleSubmit, errors } = useForm();
   const onSubmit = data => {
-    Alert.alert(
-    "Datos",
-    JSON.stringify(data),
-    );
-    navigation.navigate("Home");
+    navigation.navigate("Finalizar", {
+      produccion: data.produccion, 
+      descarte: data.descarte,
+      operario: datos.operario,
+      lbolsa: datos.lbolsa,
+      lesponja: datos.lesponja,
+      producto: datos.producto,
+      lote: datos.lote, 
+    });
   }
 
 return (
   <View style={styles.container}>
+
+    <Text style={styles.label}>Cantidad Producida</Text>
+      <Controller
+          as={TextInput}
+          control={control}
+          name="produccion"
+          onChange={args => args[0].nativeEvent.text}
+          rules={{ required: true }}
+          defaultValue=""
+          style={styles.numberImput}
+      />
+      {errors.produccion && Alert.alert("Complete la Cantidad Producida")}
     
     <Text style={styles.label}>Descarte</Text>
     <Controller
@@ -23,26 +39,12 @@ return (
         name="descarte"
         onChange={args => args[0].nativeEvent.text}
         rules={{ required: true }}
-        defaultValue="..."
+        defaultValue=""
         style={styles.textImput}
     />
     {errors.descarte && Alert.alert("Complete el Descarte")}
 
-    <Text style={styles.label}>Cantidad Producida</Text>
-    <Controller
-        as={TextInput}
-        control={control}
-        name="produccion"
-        onChange={args => args[0].nativeEvent.text}
-        rules={{ required: true }}
-        defaultValue="..."
-        style={styles.numberImput}
-    />
-    {errors.produccion && Alert.alert("Complete la Cantidad Producida")}
-
-
-
-    <Button title="Cerrar Secion" onPress={handleSubmit(onSubmit)} />
+    <Button title="Cerrar Sesion" onPress={handleSubmit(onSubmit)} />
   </View>  
 );
 
@@ -50,14 +52,12 @@ return (
 
 const styles = StyleSheet.create({
     label: {
-      marginLeft: 1,
       padding: 2,
     },
     container: {
       flex: 1,
       backgroundColor: '#fff',
-      alignItems: 'center',
-
+      marginLeft: 0,
     },
     numberImput: {
         height: 40,
