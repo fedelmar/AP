@@ -22,13 +22,13 @@ export default function Sesion({ route, navigation }) {
   };
 
   return (
-    <View style={styles.container}>
-      <Date/>
-      <Text style={styles.label}>Operario: {datos.operario}</Text>
-      <Text style={styles.label}>Lote: {datos.lote}</Text>
-      <Text tyle={styles.label}>Producto: {datos.producto}</Text>
-      <Form navigation={navigation} datos={datos}/>
-    </View>
+      <View style={styles.container}>
+        <Date/>
+        <Text style={styles.label}>Operario: {datos.operario}</Text>
+        <Text style={styles.label}>Lote: {datos.lote}</Text>
+        <Text tyle={styles.label}>Producto: {datos.producto}</Text>
+        <Form navigation={navigation} datos={datos}/>
+      </View>
   )
 }
 

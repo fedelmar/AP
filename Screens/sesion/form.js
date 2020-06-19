@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm, Controller } from "react-hook-form";
-import { TextInput, StyleSheet, Text, View, Alert, Button } from 'react-native';
+import { TextInput, StyleSheet, Text, View, Alert, Button, ScrollView } from 'react-native';
 
 export default function Form({ navigation, datos }) {
  
@@ -18,7 +18,7 @@ export default function Form({ navigation, datos }) {
   }
 
 return (
-  <View style={styles.container}>
+  <ScrollView style={styles.container}>
 
     <Text style={styles.label}>Cantidad Producida</Text>
       <Controller
@@ -29,6 +29,8 @@ return (
           rules={{ required: true }}
           defaultValue=""
           style={styles.numberImput}
+          placeholder="00"
+          keyboardType="number-pad"
       />
       {errors.produccion && Alert.alert("Complete la Cantidad Producida")}
     
@@ -41,11 +43,13 @@ return (
         rules={{ required: true }}
         defaultValue=""
         style={styles.textImput}
+        placeholder="00"
+        keyboardType="number-pad"
     />
     {errors.descarte && Alert.alert("Complete el Descarte")}
 
     <Button title="Cerrar Sesion" onPress={handleSubmit(onSubmit)} />
-  </View>  
+  </ScrollView>  
 );
 
 }
