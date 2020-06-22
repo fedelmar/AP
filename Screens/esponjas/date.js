@@ -14,11 +14,12 @@ export default class App extends Component {
 
     var date = new Date().getDate(); //Current Date
     var month = new Date().getMonth() + 1; //Current Month
-    var year = new Date().getFullYear(); //Current Year
+    var fullYear = new Date().getFullYear(); //Current Year
+    var year = fullYear.toString().slice(2, 4);
 
     that.setState({
       date:
-        date + '/' + month + '/' + year ,
+        'Dia: ' + date + '/' + month + '/' + year ,
     });
   }
 

@@ -11,14 +11,13 @@ export default class App extends Component {
   }
   componentDidMount() {
     var that = this;
-
+    
     var hours = new Date().getHours(); //Current Hours
     var min = new Date().getMinutes(); //Current Minutes
-    var sec = new Date().getSeconds(); //Current Seconds
 
     that.setState({
       date:
-        hours + ':' + min + ':' + sec,
+        ' ' + hours + ':' + min,
     });
   }
 

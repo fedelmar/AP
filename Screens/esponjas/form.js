@@ -4,7 +4,9 @@ import { TextInput, StyleSheet, Text, View, Alert, Button, ScrollView } from 're
 import Date from './date';
 
 export default function Form({ navigation }) {
+
   const { control, handleSubmit, errors } = useForm();
+
   const onSubmit = data => {
     navigation.navigate('Sesion',{
       lote: data.lote, 
@@ -14,7 +16,7 @@ export default function Form({ navigation }) {
       lesponja: data.lesponja,
     });
   }
-
+  
 return (
   <ScrollView>
     <View style={styles.container}>
